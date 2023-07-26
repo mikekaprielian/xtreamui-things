@@ -10,6 +10,9 @@ zlib_version="1.2.13"
 sudo apt update && sudo apt upgrade -y
 sudo apt-get -y install software-properties-common build-essential git zlib1g-dev libpcre3 libpcre3-dev libbz2-dev libssl-dev libgd-dev libxslt-dev libgeoip-dev tar unzip curl
 
+# Change directory to /root
+cd /root
+
 # Create the xc_nginx directory and navigate into it
 mkdir xc_nginx
 cd xc_nginx
