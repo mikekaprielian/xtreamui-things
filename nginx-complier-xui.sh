@@ -108,8 +108,6 @@ make clean
             --with-openssl="../openssl-$openssl_version" \
             --add-module=../ngx_http_geoip2_module \
             --with-http_ssl_module
-            --binary-name=nginx_rtmp  # Specify the binary name here
-
 
 make
 
