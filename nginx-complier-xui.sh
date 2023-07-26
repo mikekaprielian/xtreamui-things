@@ -89,6 +89,7 @@ sudo make install
 
 # Go back to the nginx directory to compile nginx_rtmp
 cd /root/nginx-$nginx_version
+make clean
 
 # Configure and compile nginx_rtmp
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/ \
