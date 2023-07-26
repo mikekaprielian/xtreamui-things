@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Define version numbers in arrays
-openssl_version="1.1.1t"
-nginx_version="1.24.0"
-pcre_version="8.44"
-zlib_version="1.2.12"
+openssl_version="1.1.1u"
+nginx_version="1.25.1"
+pcre_version="8.45"
+zlib_version="1.2.13"
 
 # Update and install required packages
 sudo apt update && sudo apt upgrade -y
