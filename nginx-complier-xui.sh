@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define version numbers in arrays
-openssl_version="1.1.1u"
+openssl_version="3.1.1"
 nginx_version="1.25.1"
 rtmp_module_version="1.2.2"
 pcre_version="8.45"
