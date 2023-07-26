@@ -116,6 +116,9 @@ make
 # Install compiled nginx_rtmp
 sudo make install
 
+# Rename the binary to nginx_rtmp
+sudo mv /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/nginx /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/nginx_rtmp
+
 echo "Nginx compilation and installation completed!"
 
 
