@@ -31,8 +31,8 @@ tar -xzvf "pcre-$pcre_version.tar.gz"
 wget "https://zlib.net/zlib-$zlib_version.tar.gz"
 tar -xzvf "zlib-$zlib_version.tar.gz"
 
-wget https://github.com/arut/nginx-rtmp-module/archive/v$rtmp_module_version.zip
-tar -xzvf "https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v$rtmp_module_version.tar.gz"
+wget https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v$rtmp_module_version.tar.gz
+tar -xzvf "v$rtmp_module_version.tar.gz"
 
 # Install libmaxminddb-dev
 sudo add-apt-repository ppa:maxmind/ppa -y
