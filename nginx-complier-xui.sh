@@ -3,7 +3,7 @@
 # Define version numbers in arrays
 openssl_version="1.1.1u"
 nginx_version="1.25.1"
-nginxrtmp_version="1.2.2"
+rtmp_module_version="1.2.2"
 pcre_version="8.45"
 zlib_version="1.2.13"
 
@@ -31,8 +31,8 @@ tar -xzvf "pcre-$pcre_version.tar.gz"
 wget "https://zlib.net/zlib-$zlib_version.tar.gz"
 tar -xzvf "zlib-$zlib_version.tar.gz"
 
-wget https://github.com/arut/nginx-rtmp-module/archive/v$nginxrtmp_version.zip
-tar -xzvf "https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v$nginxrtmp_version.tar.gz"
+wget https://github.com/arut/nginx-rtmp-module/archive/v$rtmp_module_version.zip
+tar -xzvf "https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v$rtmp_module_version.tar.gz"
 
 # Install libmaxminddb-dev
 sudo add-apt-repository ppa:maxmind/ppa -y
@@ -87,4 +87,33 @@ make
 # Install compiled nginx
 sudo make install
 
+# Go back to the nginx directory to compile nginx_rtmp
+cd /root/nginx-$nginx_version
+
+# Configure and compile nginx_rtmp
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/ \
+            --lock-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx_rtmp.lock \
+            --conf-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf \
+            --error-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_error.log \
+            --http-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_access.log \
+            --pid-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx.pid \
+            --add-module=../nginx-rtmp-module-$rtmp_module_version \
+            --with-ld-opt='-Wl,-z,relro -Wl,--as-needed -static' \
+            --with-pcre \
+            --without-http_rewrite_module \
+            --with-file-aio \
+            --with-cpu-opt=generic \
+            --with-cc-opt='-static -static-libgcc -g -O2 -Wformat -Wall' \
+            --with-openssl="../openssl-$openssl_version" \
+            --add-module=/root/ngx_http_geoip2_module \
+            --with-http_ssl_module
+
+make
+
+# Install compiled nginx_rtmp
+sudo make install
+
 echo "Nginx compilation and installation completed!"
+
+
+
