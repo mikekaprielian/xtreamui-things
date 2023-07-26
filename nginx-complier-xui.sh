@@ -3,6 +3,7 @@
 # Define version numbers in arrays
 openssl_version="1.1.1u"
 nginx_version="1.25.1"
+nginxrtmp_version="1.2.2"
 pcre_version="8.45"
 zlib_version="1.2.13"
 
@@ -29,6 +30,9 @@ tar -xzvf "pcre-$pcre_version.tar.gz"
 
 wget "https://zlib.net/zlib-$zlib_version.tar.gz"
 tar -xzvf "zlib-$zlib_version.tar.gz"
+
+wget https://github.com/arut/nginx-rtmp-module/archive/v$nginxrtmp_version.zip
+tar -xzvf "https://github.com/arut/nginx-rtmp-module/archive/refs/tags/v$nginxrtmp_version.tar.gz"
 
 # Install libmaxminddb-dev
 sudo add-apt-repository ppa:maxmind/ppa -y
