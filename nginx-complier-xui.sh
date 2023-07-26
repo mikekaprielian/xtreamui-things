@@ -105,7 +105,7 @@ cd /root/nginx-$nginx_version
             --with-cpu-opt=generic \
             --with-cc-opt='-static -static-libgcc -g -O2 -Wformat -Wall' \
             --with-openssl="../openssl-$openssl_version" \
-            --add-module=/root/ngx_http_geoip2_module \
+            --add-module=../ngx_http_geoip2_module \
             --with-http_ssl_module
 
 make
