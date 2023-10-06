@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Define version numbers in arrays
-openssl_version="3.1.1"
-nginx_version="1.25.1"
+openssl_version="3.1.3"
+nginx_version="1.25.2"
 rtmp_module_version="1.2.2"
 pcre_version="8.45"
-zlib_version="1.2.13"
+zlib_version="1.3"
 
 # Update and install required packages
 sudo apt update && sudo apt upgrade -y
